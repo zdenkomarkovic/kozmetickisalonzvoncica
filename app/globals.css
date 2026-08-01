@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  /* Boje - Beauty & Spa Zvončica */
+  --color-cream: #fbf4ef;
+  --color-blush: #f3ddd6;
+  --color-blush-dark: #e8c2b8;
+  --color-gold: #b98a5e;
+  --color-gold-dark: #93693f;
+  --color-rose: #a9645b;
+  --color-ink: #3c2c26;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+:root {
+  --color-primary: var(--color-gold);
+  --color-secondary: var(--color-blush);
+  --color-bg: var(--color-cream);
+  --color-text: var(--color-ink);
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+}
+
+/* Dodatni custom stilovi idu ovde */

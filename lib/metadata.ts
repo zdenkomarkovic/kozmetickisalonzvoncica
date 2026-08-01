@@ -1,0 +1,89 @@
+import type { Metadata } from "next";
+import { SITE_NAME, SITE_URL } from "./constants";
+
+interface BuildMetadataOptions {
+  title?: string;
+  description?: string;
+  /** Putanja do slike za OG (relativna od /public ili apsolutna URL) */
+  image?: string;
+  /** Canonical URL - ako nije naveden, koristi SITE_URL */
+  url?: string;
+  /** Da li da noindex ova stranica */
+  noIndex?: boolean;
+  /** Tip stranice za OG */
+  type?: "website" | "article";
+  /** Datum objave (za blog postove) */
+  publishedTime?: string;
+  /**
+   * Next.js NE primenjuje layout-ov title.template na "/" (page.tsx u app/
+   * deli isti route segment sa root layout.tsx, pa tamo template nema
+   * efekta) - primenjuje ga samo na "prave" pod-rute (npr. /cenovnik).
+   * Postavi na true SAMO za homepage (app/page.tsx) da <title> tag dobije
+   * pun naziv direktno ovde, bez oslanjanja na template.
+   */
+  isRootPage?: boolean;
+}
+
+/**
+ * Helper za generisanje Next.js Metadata objekta.
+ * Koristiti u svakom page.tsx fajlu.
+ *
+ * @example
+ * // U page.tsx:
+ * export const metadata = buildMetadata({
+ *   title: "O nama",
+ *   description: "Kratki opis stranice",
+ * });
+ */
+export function buildMetadata({
+  title,
+  description,
+  image,
+  url,
+  noIndex = false,
+  type = "website",
+  publishedTime,
+  isRootPage = false,
+}: BuildMetadataOptions = {}): Metadata {
+  // Open Graph/Twitter nemaju template nasledjivanje, pa tamo uvek ide pun naziv.
+  const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
+  const canonicalUrl = url ?? SITE_URL;
+  const ogImage = image ?? `${SITE_URL}/og-image.png`; // Dodaj og-image.png u /public
+
+  return {
+    ...(title ? { title: isRootPage ? fullTitle : title } : {}),
+    description,
+    metadataBase: new URL(SITE_URL),
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: fullTitle,
+      description,
+      url: canonicalUrl,
+      siteName: SITE_NAME,
+      type,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: fullTitle,
+        },
+      ],
+      ...(publishedTime && { publishedTime }),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description,
+      images: [ogImage],
+    },
+    ...(noIndex && {
+      robots: {
+        index: false,
+        follow: false,
+      },
+    }),
+  };
+}

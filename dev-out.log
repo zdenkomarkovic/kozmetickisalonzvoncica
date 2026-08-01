@@ -1,0 +1,39 @@
+   ▲ Next.js 15.5.12
+   - Local:        http://localhost:3001
+   - Network:      http://192.168.1.6:3001
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.3s
+ ○ Compiling / ...
+ ✓ Compiled / in 4.1s (717 modules)
+ GET / 200 in 5008ms
+ ○ Compiling /cenovnik ...
+ ✓ Compiled /cenovnik in 1205ms (709 modules)
+ GET /cenovnik 200 in 1524ms
+ ✓ Compiled in 451ms (709 modules)
+ ✓ Compiled in 265ms (274 modules)
+ ✓ Compiled in 200ms (274 modules)
+ ✓ Compiled in 130ms (274 modules)
+ ✓ Compiled in 123ms (274 modules)
+ ✓ Compiled in 103ms (274 modules)
+ ✓ Compiled in 132ms (274 modules)
+ ✓ Compiled in 131ms (274 modules)
+ ✓ Compiled in 251ms (274 modules)
+ ✓ Compiled in 173ms (274 modules)
+ ✓ Compiled / in 178ms (428 modules)
+ GET / 200 in 615ms
+ ✓ Compiled /cenovnik in 117ms (435 modules)
+ GET /cenovnik 200 in 453ms
+ ✓ Compiled /_not-found in 412ms (696 modules)
+ GET /ne-postoji 404 in 686ms
+ ✓ Compiled in 480ms (710 modules)
+ GET / 200 in 300ms
+ GET /cenovnik 200 in 93ms
+ GET /ne-postoji 404 in 89ms
+ GET / 200 in 176ms
+ GET /cenovnik 200 in 324ms
+ ✓ Compiled in 1256ms (274 modules)
+ ✓ Compiled in 179ms (274 modules)
+ ✓ Compiled in 290ms (274 modules)
+ ✓ Compiled in 111ms (274 modules)
