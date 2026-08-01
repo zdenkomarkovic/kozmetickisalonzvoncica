@@ -5,7 +5,7 @@ import { SERVICE_CATEGORIES } from "@/lib/services";
 import { cn } from "@/lib/utils";
 
 export function PriceList() {
-  const [active, setActive] = useState(SERVICE_CATEGORIES[0].id);
+  const [active, setActive] = useState(SERVICE_CATEGORIES[0]!.id);
 
   const activeCategory = SERVICE_CATEGORIES.find((c) => c.id === active)!;
 
