@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { LinkButton } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { SITE_ADDRESS, SITE_PHONE, SITE_PHONE_HREF, SOCIAL_INSTAGRAM } from "@/lib/constants";
+import { SITE_PHONE, SITE_PHONE_HREF, SOCIAL_INSTAGRAM } from "@/lib/constants";
 
 export function Hero() {
   return (
@@ -11,17 +11,16 @@ export function Hero() {
     >
       <Container className="grid items-center gap-8 py-6 sm:gap-12 sm:py-20 lg:grid-cols-2 lg:py-28">
         <div className="order-2 lg:order-1">
-          <p className="mb-4 text-sm font-semibold tracking-[0.25em] text-gold-dark uppercase">
-            {SITE_ADDRESS}
-          </p>
-          <h1 className="font-serif text-4xl leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
+          <h1 className="mb-4 text-sm font-semibold tracking-[0.25em] text-gold-dark uppercase">
+            Kozmetički salon Zvončica, Voždovac, Beograd – Gostivarska 50a
+          </h1>
+          <h2 className="font-serif text-4xl leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
             Lepota počinje <br className="hidden sm:block" />
             od <span className="italic text-gold-dark">malih detalja</span>
-          </h1>
+          </h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-ink/70 sm:text-lg">
-            Beauty &amp; Spa Zvončica je vaš prostor za negu, opuštanje i uživanje –
-            manikir i pedikir, depilacija, masaže, maderoterapija i tretmani lica na
-            jednom mestu.
+            Beauty &amp; Spa Zvončica je vaš prostor za negu, opuštanje i uživanje – manikir i
+            pedikir, depilacija, masaže, maderoterapija i tretmani lica na jednom mestu.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -54,12 +53,7 @@ export function Hero() {
         </div>
       </Container>
 
-      <a
-        href={SOCIAL_INSTAGRAM}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="sr-only"
-      >
+      <a href={SOCIAL_INSTAGRAM} target="_blank" rel="noopener noreferrer" className="sr-only">
         Pratite nas na Instagramu
       </a>
     </section>
