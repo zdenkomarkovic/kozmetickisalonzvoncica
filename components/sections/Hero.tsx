@@ -11,7 +11,7 @@ export function Hero() {
     >
       <Container className="grid items-center gap-8 py-6 sm:gap-12 sm:py-20 lg:grid-cols-2 lg:py-28">
         <div className="order-2 lg:order-1">
-          <h1 className="mb-4 text-sm font-semibold tracking-[0.25em] text-gold-dark uppercase">
+          <h1 className="mb-2 text-xs font-semibold tracking-[0.1em] text-gold-dark uppercase sm:mb-4 sm:text-sm sm:tracking-[0.25em]">
             Kozmetički salon Zvončica, Voždovac, Beograd – Gostivarska 50a
           </h1>
           <h2 className="font-serif text-4xl leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
