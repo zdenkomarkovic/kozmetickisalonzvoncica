@@ -12,6 +12,7 @@ import {
 } from "@/lib/constants";
 
 const NAV_LINKS = [
+  { href: "/", label: "Početna" },
   { href: "/#usluge", label: "Usluge" },
   { href: "/cenovnik", label: "Cenovnik" },
   { href: "/#galerija", label: "Galerija" },

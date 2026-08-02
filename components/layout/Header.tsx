@@ -4,15 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Container } from "@/components/ui/Container";
-import {
-  SITE_PHONE,
-  SITE_PHONE_HREF,
-  SOCIAL_FACEBOOK,
-  SOCIAL_INSTAGRAM,
-} from "@/lib/constants";
+import { SITE_PHONE, SITE_PHONE_HREF, SOCIAL_FACEBOOK, SOCIAL_INSTAGRAM } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
+  { href: "/", label: "Početna" },
   { href: "/#usluge", label: "Usluge" },
   { href: "/cenovnik", label: "Cenovnik" },
   { href: "/#galerija", label: "Galerija" },
@@ -26,28 +22,26 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-blush/60 bg-cream/90 backdrop-blur">
-      <Container className="flex h-20 items-center justify-between">
-        <Link
-          href="/"
-          onClick={() => setOpen(false)}
-          className="flex items-center gap-3"
-        >
-          <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full ring-1 ring-gold/40">
+      <Container className="flex h-18 items-center justify-between">
+        <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-3">
+          <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-1 ring-gold/40">
             <Image
               src="/logo.jpg"
               alt="Beauty & Spa Zvončica"
               fill
-              sizes="44px"
+              sizes="50px"
               className="object-cover"
             />
           </span>
-          <span className="font-serif text-xl leading-none text-ink sm:text-2xl">
-            Beauty<span className="text-gold">&amp;</span>Spa{" "}
+          <span className="flex flex-col items-center text-center font-serif text-xl leading-tight text-ink sm:text-2xl">
+            <span>
+              Beauty<span className="text-gold">&amp;</span>Spa
+            </span>
             <span className="italic text-gold-dark">Zvončica</span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -59,7 +53,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           <a
             href={SOCIAL_INSTAGRAM}
             target="_blank"
@@ -91,7 +85,7 @@ export function Header() {
           aria-label="Meni"
           aria-expanded={open}
           onClick={() => setOpen((prev) => !prev)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
         >
           <span
             className={cn(
@@ -99,9 +93,7 @@ export function Header() {
               open && "translate-y-2 rotate-45"
             )}
           />
-          <span
-            className={cn("h-0.5 w-6 bg-ink transition-opacity", open && "opacity-0")}
-          />
+          <span className={cn("h-0.5 w-6 bg-ink transition-opacity", open && "opacity-0")} />
           <span
             className={cn(
               "h-0.5 w-6 bg-ink transition-transform",
@@ -112,7 +104,7 @@ export function Header() {
       </Container>
 
       {open && (
-        <div className="border-t border-blush/60 bg-cream md:hidden">
+        <div className="border-t border-blush/60 bg-cream lg:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {NAV_LINKS.map((link) => (
               <Link
