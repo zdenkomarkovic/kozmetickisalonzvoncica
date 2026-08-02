@@ -9,7 +9,7 @@ export function Hero() {
       id="hero"
       className="relative overflow-hidden bg-gradient-to-b from-blush/50 via-cream to-cream"
     >
-      <Container className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:py-28">
+      <Container className="grid items-center gap-8 py-6 sm:gap-12 sm:py-20 lg:grid-cols-2 lg:py-28">
         <div className="order-2 lg:order-1">
           <p className="mb-4 text-sm font-semibold tracking-[0.25em] text-gold-dark uppercase">
             {SITE_ADDRESS}
