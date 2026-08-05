@@ -24,7 +24,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-blush/60 bg-cream/90 backdrop-blur">
       <Container className="flex h-18 items-center justify-between">
         <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-3">
-          <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-1 ring-gold/40">
+          <span className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full ring-1 ring-gold/40">
             <Image
               src="/logo.jpg"
               alt="Beauty & Spa Zvončica"

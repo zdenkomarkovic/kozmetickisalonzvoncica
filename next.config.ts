@@ -7,11 +7,10 @@ const nextConfig: NextConfig = {
   // Optimizacija slika - dodaj domene po potrebi
   images: {
     remotePatterns: [
-      // Primer:
-      // {
-      //   protocol: "https",
-      //   hostname: "example.com",
-      // },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
     ],
   },
 
